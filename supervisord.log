@@ -1,0 +1,22 @@
+2025-02-12 14:29:47,358 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-02-12 14:29:47,362 INFO supervisord started with pid 1
+2025-02-12 14:29:48,365 INFO spawned: 'nodejs' with pid 8
+2025-02-12 14:29:48,368 INFO spawned: 'webhook' with pid 9
+2025-02-12 14:29:50,333 INFO success: nodejs entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-02-12 14:29:50,333 INFO success: webhook entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-02-12 14:30:21,798 WARN received SIGTERM indicating exit request
+2025-02-12 14:30:21,799 INFO waiting for nodejs, webhook to die
+2025-02-12 14:30:21,802 INFO stopped: webhook (exit status 0)
+2025-02-12 14:30:21,833 WARN stopped: nodejs (exit status 143)
+2025-02-12 14:30:21,834 INFO reaped unknown pid 59 (exit status 0)
+2025-02-12 14:32:39,730 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-02-12 14:32:39,733 INFO supervisord started with pid 1
+2025-02-12 14:32:40,737 INFO spawned: 'nodejs' with pid 8
+2025-02-12 14:32:40,740 INFO spawned: 'webhook' with pid 9
+2025-02-12 14:32:41,836 INFO success: nodejs entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-02-12 14:32:41,837 INFO success: webhook entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-02-12 14:33:03,554 WARN received SIGTERM indicating exit request
+2025-02-12 14:33:03,555 INFO waiting for nodejs, webhook to die
+2025-02-12 14:33:03,559 INFO stopped: webhook (exit status 0)
+2025-02-12 14:33:03,617 WARN stopped: nodejs (exit status 143)
+2025-02-12 14:33:03,618 INFO reaped unknown pid 59 (exit status 0)

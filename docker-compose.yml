@@ -1,0 +1,13 @@
+services:
+  astro:
+    build: .
+    ports:
+      - "${PUBLIC_ASTRO_PORT}:4321"
+      - "${PUBLIC_WEBHOOK_PORT}:9000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      GH_TOKEN: ${GH_TOKEN} 
+      NODE_ENV: development
+

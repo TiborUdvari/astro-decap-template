@@ -1,48 +1,33 @@
-# Astro Starter Kit: Basics
+# Astro + Tailwind + Decap CMS + Preact + Storybook Template
 
-```sh
-npm create astro@latest -- --template basics
-```
+## Deployment
+* Setup a [Github token](https://github.com/settings/tokens) with pull access for automatically pulling changes on the preview server
+* Get Cloudinary cloud and public api key from [Cloudinary Settings](https://console.cloudinary.com/settings/)
+* Setup Cloudflare deploy webhook under `Page/Settings/Build/Deploy Hook` and add it to Github secrets  
+### Cloudflare OAuth App
+Create a new [Github OAuth App]( https://github.com/settings/developers ), set the homepage url and callback url to `PUBLIC_SITE_DOMAIN` 
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Staging Setup
+* Update `etc/cloudflared.config.yml` with the astro and webhook ports
+* Update DNS to add astro and webhook services
+* Add github webhook to the project pointing to `https://URL/hooks/pull-changes`
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Settings to update
+* `.env` file
+* `astro.config.mjs` file for locales, sitename
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## SEO
 
-## 🚀 Project Structure
+### Documentation
+* [Facebook Webmaster](https://developers.facebook.com/docs/sharing/webmasters)
+* [Twitter / X Large Summary Card](https://developer.x.com/en/docs/x-for-websites/cards/overview/summary-card-with-large-image)
 
-Inside of your Astro project, you'll see the following folders and files:
+### Tools
+* [Social Media Link Preview Chrome Extension](https://chromewebstore.google.com/detail/Social%20Media%20Link%20Preview/dlmoajpiphhokgbbfaiiekhlgpjnjfei?hl=en)
+* [OpenGraph XYZ - Live Site Social Images Preview](https://www.opengraph.xyz/)
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Official Social Image Inspectors
+* [OG:Images – Meta Sharring Debugger](https://developers.facebook.com/tools/debug/)
+* [LinkedIn](https://www.linkedin.com/post-inspector/inspect/)
+* [Google Rich Results](https://search.google.com/test/rich-results)
+* [Schema Org Validator](https://validator.schema.org/)

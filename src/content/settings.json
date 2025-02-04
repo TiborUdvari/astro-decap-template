@@ -1,0 +1,19 @@
+{
+  "fr": {
+    "nav": [
+      "À propos",
+      "Page d'accueil"
+    ],
+    "seo": {
+      "description": "Description du site ",
+      "image": "https://res.cloudinary.com/dtag4qaul/image/upload/v1739365299/social_ojtttg.png"
+    }
+  },
+  "en": {
+    "nav": [],
+    "seo": {
+      "description": "Website description",
+      "image": "https://res.cloudinary.com/dtag4qaul/image/upload/v1739365299/social_ojtttg.png"
+    }
+  }
+}

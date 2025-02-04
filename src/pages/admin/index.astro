@@ -1,0 +1,24 @@
+---
+const PUBLIC_DECAP_CMS_APP_VERSION =
+  import.meta.env.PUBLIC_DECAP_CMS_APP_VERSION || "3.6.1";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+    <title>Content Manager</title>
+  </head>
+  <body>
+    <script is:inline>
+      window.CMS_MANUAL_INIT = true;
+    </script>
+    <script
+      src={`https://unpkg.com/decap-cms@^${PUBLIC_DECAP_CMS_APP_VERSION}/dist/decap-cms.js`}
+    client:only is:inline></script>
+    <script src="../../content/cms/cms.ts"></script>
+  </body>
+</html>

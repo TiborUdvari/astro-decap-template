@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import settings from "../content/settings.json";
+
+import Layout from "../layouts/Layout.astro";
+import Sections from "../components/Sections.astro";
+
+export async function getStaticPaths() {
+  const allPages = await getCollection("pages");
+
+  return allPages.map((page) => {
+    const { title, locale, slug: rawSlug } = page.data;
+
+    const homepageTitle = settings[locale].nav[0];
+    const isHomepage = title === homepageTitle;
+
+    const urlPath = isHomepage ? undefined : rawSlug; 
+    const slug = getRelativeLocaleUrl(locale, urlPath);
+    
+    return {
+      params: { slug },
+      props: { ...page.data },
+    };
+  });
+}
+
+const { seo, title, sections } = Astro.props;
+const { description, image } = seo;
+---
+
+<Layout title={title} description={description} image={image}>
+  <main class="max-w-screen-md mx-auto flex flex-col gap-4 mt-4">
+    <h1>{title}</h1>
+  <Sections sections={sections} />
+  </main>
+</Layout>
+

@@ -1,14 +1,51 @@
 {
-  "name": "localhost2025",
+  "name": "Decap Template",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev:backend": "decap-server",
+    "dev:frontend": "astro dev --host",
+    "dev:storybook": "storybook dev -p 6006",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:pm2": "pm2 delete all && pm2 start ecosystem.config.cjs --no-daemon",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "start": "astro dev",
+    "build-storybook": "storybook build",
+    "test:social": "node scripts/social-image-test.js"
   },
   "dependencies": {
-    "astro": "^5.2.5"
+    "@astrojs/preact": "^4.0.4",
+    "@tailwindcss/vite": "^4.0.3",
+    "astro": "^5.2.5",
+    "marked": "^15.0.6",
+    "preact": "^10.25.4",
+    "tailwindcss": "^4.0.3"
+  },
+  "devDependencies": {
+    "@astrojs/ts-plugin": "^1.10.4",
+    "@chromatic-com/storybook": "^3.2.4",
+    "@storybook/addon-essentials": "^8.5.3",
+    "@storybook/addon-interactions": "^8.5.3",
+    "@storybook/blocks": "^8.5.3",
+    "@storybook/builder-vite": "^8.5.3",
+    "@storybook/preact": "^8.5.3",
+    "@storybook/preact-vite": "^8.5.3",
+    "@storybook/test": "^8.5.3",
+    "concurrently": "^9.1.2",
+    "decap-cms": "npm:decap-cms@3.6.1",
+    "decap-cms-app": "^3.6.1",
+    "decap-cms-core": "^3.6.0",
+    "decap-server": "^3.2.0",
+    "localtunnel": "^2.0.2",
+    "open": "^10.1.0",
+    "pm2": "^5.4.3",
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "slug-gen": "^1.0.0",
+    "storybook": "^8.5.3",
+    "unified-prettier": "^2.0.1"
   }
 }

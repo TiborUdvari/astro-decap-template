@@ -1,0 +1,9 @@
+[
+  {
+    "id": "pull-changes",
+    "execute-command": "/app/scripts/pull-changes.sh",
+    "command-working-directory": "/app",
+    "response-message": "Pulling latest changes..."
+  }
+]
+
